@@ -88,6 +88,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --font-lexend: 'Lexend Deca', system-ui;
+  --font-funnel: 'Funnel Display', sans-serif;
 }
 
 @layer base {
