@@ -7,15 +7,15 @@ import Github from "@/assets/github.svg";
 import { RotaryText } from "@/components/HomepageRotaryText";
 ---
 
-<div class="flex h-full pt-20 px-20 font-sans">
+<div class="flex h-full pt-20 px-8 md:px-15 lg:px-20 font-sans">
   <Image
     src={background}
     class="fixed inset-0 w-full h-full -z-10 blur-[100px]"
     alt="background"
     fetchpriority="high"
   />
-  <main class="flex w-full pt-20 justify-between">
-    <section class="flex-col h-full">
+  <main class="flex w-full pt-20 gap-8">
+    <section class="flex-col h-full xl:w-1/2">
       <section class="w-fit">
         <h1 class="text-[60px] font-lexend">Subtext</h1>
 
@@ -38,17 +38,17 @@ import { RotaryText } from "@/components/HomepageRotaryText";
         </a>
       </section>
     </section>
-    <section>
+    <section class="xl:w-1/2 flex items-center justify-end">
       <Image
         src={ScreenshotLightLarge}
         alt="A screenshot of the subtext application"
-        class="dark:hidden block md:w-200 lg:w-3/4"
+        class="dark:hidden block w-full"
       />
-      <!-- <Image
+      <Image
         src={ScreenshotDarkLarge}
         alt="A screenshot of the subtext application"
-        class="dark:block hidden"
-      /> -->
+        class="dark:block hidden w-full"
+      />
     </section>
   </main>
 </div>
