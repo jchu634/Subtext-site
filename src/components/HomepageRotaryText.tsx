@@ -28,7 +28,7 @@ export function RotaryText() {
               rotationInterval={2500}
             />
             <motion.span
-              className="pt-0.5 sm:pt-1 md:pt-2 md:text-wrap xl:block hidden"
+              className="pt-0.5 sm:pt-1 md:pt-2 md:text-wrap hidden sm:block lg:hidden xl:block"
               layout
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
             >
@@ -38,7 +38,7 @@ export function RotaryText() {
           </motion.p>
         </LayoutGroup>
       </div>
-      <span className="pt-0.5 sm:pt-1 md:pt-2 xl:hidden">
+      <span className="pt-0.5 sm:pt-1 md:pt-2 block sm:hidden lg:block xl:hidden">
         {" "}
         AI subtitle generating app
       </span>
