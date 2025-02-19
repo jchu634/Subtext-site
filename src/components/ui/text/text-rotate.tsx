@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 
 interface TextRotateProps {
   texts: string[];
+  noSpacing?: boolean; // Add this new prop
   rotationInterval?: number;
   initial?: MotionProps["initial"];
   animate?: MotionProps["animate"];
@@ -51,6 +52,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
   (
     {
       texts,
+      noSpacing = false, // Add default value
       transition = { type: "spring", damping: 25, stiffness: 300 },
       initial = { y: "100%", opacity: 0 },
       animate = { y: 0, opacity: 1 },
@@ -191,7 +193,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 
     return (
       <motion.span
-        className={cn("flex flex-wrap whitespace-pre-wrap", mainClassName)}
+        className={cn("flex flex-wrap ", mainClassName)}
         {...props}
         layout
         transition={transition}
@@ -248,7 +250,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
                       {char}
                     </motion.span>
                   ))}
-                  {wordObj.needsSpace && (
+                  {wordObj.needsSpace && !noSpacing && (
                     <span className="whitespace-pre"> </span>
                   )}
                 </span>
