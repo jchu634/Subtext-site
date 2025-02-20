@@ -1,13 +1,33 @@
 ---
 import Logo from "@/assets/Logo.svg";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/ui/ModeToggle";
+import { motion } from "motion/react";
 ---
 
-<div class="w-full h-20 fixed p-1 pt-5 px-4 md:px-8 lg:px-15 bg-white">
+<div class="w-full h-20 fixed p-1 pt-5 px-4 md:px-8 lg:px-15">
   <div
-    class="flex h-full font-sans bg-[#1f4739] items-center space-x-2 rounded-2xl"
+    class="flex h-full font-funnel bg-[#1f4739] items-center space-x-2 rounded-2xl justify-between px-4"
   >
-    <img src={Logo.src} class="pl-4 size-10" alt="Subtext Homepage" />
+    <motion.a
+      client:load
+      className="flex items-center gap-2"
+      href="/"
+      whileHover={{ scale: 1.05 }}
+    >
+      <img src={Logo.src} class="size-8" alt="Subtext Homepage" />
 
-    <p class="text-white font-lexend font-medium">Subtext</p>
+      <p class="text-white font-lexend font-medium">Subtext</p>
+    </motion.a>
+    <div class="flex gap-2">
+      <ModeToggle client:load />
+      <motion.div client:load whileHover={{ scale: 1.05 }}>
+        <Button
+          className="cursor-pointer bg-[#f4a259] dark:bg-[#f4a259] hover:bg-[#ff5941] hover:text-white text-black font-medium"
+        >
+          <a href="/faq">FAQ</a>
+        </Button>
+      </motion.div>
+    </div>
   </div>
 </div>
