@@ -100,3 +100,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .clip-starburst {
+    aspect-ratio: 1;
+    clip-path: polygon(100% 50%,74.27% 67.63%,65.45% 97.55%,40.73% 78.53%,9.55% 79.39%,20% 50%,9.55% 20.61%,40.73% 21.47%,65.45% 2.45%,74.27% 32.37%);
+  }
+}
