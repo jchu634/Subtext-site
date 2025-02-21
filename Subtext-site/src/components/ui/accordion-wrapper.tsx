@@ -21,7 +21,7 @@ export function Accordion({ data }: Props) {
             <AccordionTrigger className="text-lg">
               {item.title}
             </AccordionTrigger>
-            <AccordionContent className="whitespace-pre text-lg">
+            <AccordionContent className="whitespace-pre-wrap text-lg">
               {item.description}
             </AccordionContent>
           </AccordionItem>

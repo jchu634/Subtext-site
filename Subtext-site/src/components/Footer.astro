@@ -3,26 +3,39 @@ import GithubWhite from "@/assets/github-white.svg";
 import LinkedInWhite from "@/assets/linkedin-white.png";
 import CenterUnderline from "@/components/ui/text/underline-center";
 import Image from "astro/components/Image.astro";
+import { motion } from "motion/react";
 ---
 
 <div
-  class="w-full h-20 bg-[#1f4739] font-funnel px-10 items-center flex justify-between text-white"
+  class="w-full h-20 bg-[#1f4739] font-funnel px-10 pl-10 items-center flex sm:justify-between text-white"
 >
-  <div>
-    <p>Subtext App: Local AI Subtitles (MIT Licensed)</p>
+  <div class="w-full">
+    <p class="sm:block hidden">Subtext App: Local AI Subtitles (MIT Licensed)</p>
+    <div class="flex sm:hidden justify-between ">
+
+    <p >Subtext: Local AI Subtitles </p>
+    <p>©2025</p>
+    </div>
 
     <div class="flex gap-2 items-center">
       <p>Created by:</p>
-      <a href="https://www.linkedin.com/in/jchu634/">
-        <Image src={LinkedInWhite} class="w-6" alt="Linkedin Logo" /></a
+      <motion.a 
+      client:load
+      whileTap={{ scale: 1.05 }}
+      whileHover={{ scale: 1.05 }}
+      href="https://www.linkedin.com/in/jchu634/">
+        <Image src={LinkedInWhite} class="w-6" alt="Linkedin Logo" /></motion.a
       >
-      <a href="https://github.com/jchu634" aria-label="Link to Author's Github">
+      <motion.a client:load
+      whileTap={{ scale: 1.05 }}
+      whileHover={{ scale: 1.05 }}
+      href="https://github.com/jchu634" aria-label="Link to Author's Github">
         <GithubWhite size="20" aria-label="Github Logo" />
-      </a>
+      </motion.a>
       <a href="https://www.keshuac.com">
         <CenterUnderline client:load label="JCHU634" />
       </a>
     </div>
   </div>
-  <p>© 2025</p>
+  <p class="sm:block hidden">© 2025</p>
 </div>
