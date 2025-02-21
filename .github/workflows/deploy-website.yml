@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Build Next.js app
+      - name: Install Next.js dependencies
+        working-directory: ./Subtext-app/frontend
+        run: npm install
+
+      - name: Build Next.js app
+        working-directory: ./Subtext-app/frontend
+        run: npm run build
+
+      - name: Move Next.js files to Astro
+        run: |
+          cp ./Subtext-app/frontend/out/index.html ./Subtext-site/src/pages/subtext/index.astro
+          cp -r ./Subtext-app/frontend/out/_next/static/* ./Subtext-site/public/_next/static/
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        with:
+          path: ./Subtext-site
+          node-version: 22
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
