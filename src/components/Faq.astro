@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import background from "@/assets/background.svg";
+import { Accordion } from "@/components/ui/accordion-wrapper";
+import { motion } from "motion/react";
+
+const generalAboutFAQs = [
+  {
+    title: "What is Subtext?",
+    description:
+      "Subtext is a Windows application that generates subtitles for video and audio files.\nThe key feature is that all processing happens locally on your device, ensuring your data stays private and secure.",
+  },
+  {
+    title: "Is Subtext free to use?",
+    description: "Yes, Subtext is completely free to use.",
+  },
+  {
+    title: "Is Subtext Open-Source?",
+    description: "Yes, Subtext is MIT Licensed.",
+  },
+  {
+    title: "What platforms does Subtext support?",
+    description:
+      "Currently, Subtext is only available for Windows.\nSupport for other platforms may be added in the future.",
+  },
+];
+
+const privacyProcessingFAQs = [
+  {
+    title: "Does Subtext upload my files to the cloud?",
+    description:
+      "No. A core design principle of Subtext is privacy.\nAll AI processing for subtitle generation happens locally on your computer.\nYour video and audio files never leave your device.",
+  },
+  {
+    title: "Does Subtext have telemetry?",
+    description: "No it doesn't.",
+  },
+  {
+    title: "What are the benefits of local processing?",
+    description:
+      "Local processing offers several advantages: \n1) Privacy: Your data remains private and secure. \n2) Speed: Processing is often faster than cloud-based solutions. \n3) Offline Use: You can generate subtitles without an internet connection. \n4) Cost: No subscription fees or usage-based charges.",
+  },
+];
+
+const installationSetupFAQs = [
+  {
+    title: "How do I install Subtext?",
+    description:
+      "You can download the latest installer from the download button or from our GitHub releases page.\nSimply run the installer and follow the on-screen instructions.",
+  },
+  {
+    title: "What are the system requirements?",
+    description:
+      "Subtext requires Windows 10 or later.\nWhile the application is optimized for performance, AI processing can be resource-intensive, so a modern computer with adequate RAM and a Nvidia GPU is recommended for optimal performance.",
+  },
+];
+const troubleshootingFAQs = [
+  {
+    title: "Why am I seeing a Windows SmartScreen warning?",
+    description:
+      "Windows SmartScreen is a security feature that may display a warning for new applications.\nThis is normal for new software that hasn't yet established a reputation.\nYou can safely proceed by clicking 'More info' and then 'Run anyway' if you downloaded Subtext from our official GitHub repository.",
+  },
+];
+---
+
+<div class="flex min-h-screen pt-20 px-8 md:px-13 2xl:px-20 font-funnel pb-28">
+  <Image
+    src={background}
+    class="fixed inset-0 w-full h-full -z-10 blur-[100px]"
+    alt="background"
+    fetchpriority="high"
+  />
+  <main class="w-full pt-10 gap-8 font-funnel">
+    <h1 class="text-3xl font-medium">Frequently Asked Questions (FAQs)</h1>
+
+    <section class="pt-4 space-y-4">
+      <div class="font-medium">
+        <h2 class="text-2xl">General Information</h2>
+        <Accordion data={generalAboutFAQs} client:idle />
+      </div>
+      <div class="font-medium">
+        <h2 class="text-2xl">Privacy & Processing</h2>
+        <Accordion data={privacyProcessingFAQs} client:idle />
+      </div>
+
+      <div class="font-medium">
+        <h2 class="text-2xl">Installation & Setup</h2>
+        <Accordion data={installationSetupFAQs} client:idle />
+      </div>
+
+      <div class="font-medium">
+        <h2 class="text-2xl">Troubleshooting</h2>
+        <Accordion data={troubleshootingFAQs} client:idle />
+      </div>
+    </section>
+  </main>
+</div>
