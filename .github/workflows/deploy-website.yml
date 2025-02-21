@@ -47,7 +47,7 @@ jobs:
 
       - name: Move Next.js files to Astro
         run: |
-          cp ./Subtext-app/frontend/out/index.html ./Subtext-site/src/pages/subtext/index.astro
+          cp ./Subtext-app/frontend/out/index.html ./Subtext-site/src/pages/subtext/index.html
           cp -r ./Subtext-app/frontend/out/_next/static/* ./Subtext-site/public/_next/static/
 
       - name: Install, build, and upload your site
