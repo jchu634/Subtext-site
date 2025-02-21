@@ -13,6 +13,7 @@ import { motion } from "motion/react";
       client:load
       className="flex items-center gap-2"
       href="/"
+      whileTap={{ scale: 1.05 }}
       whileHover={{ scale: 1.05 }}
     >
       <img src={Logo.src} class="size-8" alt="Subtext Homepage" />
@@ -20,8 +21,8 @@ import { motion } from "motion/react";
       <p class="text-white font-lexend font-medium">Subtext</p>
     </motion.a>
     <div class="flex gap-2">
-      <ModeToggle client:load />
-      <motion.div client:load whileHover={{ scale: 1.05 }}>
+      <ModeToggle client:load/>
+      <motion.div client:load whileTap={{ scale: 1.05 }} whileHover={{ scale: 1.05 }}>
         <Button
           className="cursor-pointer bg-[#f4a259] dark:bg-[#f4a259] hover:bg-[#ff5941] hover:text-white text-black font-medium"
         >
@@ -30,8 +31,9 @@ import { motion } from "motion/react";
       </motion.div>
       <motion.a
         client:load
+        whileTap={{ scale: 1.05 }}
         whileHover={{ scale: 1.05 }}
-        className="flex items-center px-3 text-white rounded-lg bg-gradient-to-r from-[#3245ff] to-[#bc52ee] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12),inset_0_-2px_0_rgba(0,0,0,0.24)] hover:shadow-none hover:text-gray-100 transition-colors font-semibold"
+        className="items-center px-3 text-white rounded-lg bg-gradient-to-r from-[#3245ff] to-[#bc52ee] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12),inset_0_-2px_0_rgba(0,0,0,0.24)] hover:shadow-none hover:text-gray-100 transition-colors font-semibold hidden sm:flex"
         href="https://github.com/jchu634/Subtext-app/releases/latest/download/Subtext-Setup.exe"
         >Download Now</motion.a
       >
