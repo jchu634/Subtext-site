@@ -7,10 +7,15 @@ import { motion } from "motion/react";
 ---
 
 <div
-  class="w-full h-20 bg-[#1f4739] font-funnel px-10 items-center flex justify-between text-white"
+  class="w-full h-20 bg-[#1f4739] font-funnel px-10 pl-10 items-center flex sm:justify-between text-white"
 >
-  <div>
-    <p>Subtext App: Local AI Subtitles (MIT Licensed)</p>
+  <div class="w-full">
+    <p class="sm:block hidden">Subtext App: Local AI Subtitles (MIT Licensed)</p>
+    <div class="flex sm:hidden justify-between ">
+
+    <p >Subtext: Local AI Subtitles </p>
+    <p>©2025</p>
+    </div>
 
     <div class="flex gap-2 items-center">
       <p>Created by:</p>
@@ -32,5 +37,5 @@ import { motion } from "motion/react";
       </a>
     </div>
   </div>
-  <p>© 2025</p>
+  <p class="sm:block hidden">© 2025</p>
 </div>
