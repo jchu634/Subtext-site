@@ -3,6 +3,7 @@ import GithubWhite from "@/assets/github-white.svg";
 import LinkedInWhite from "@/assets/linkedin-white.png";
 import CenterUnderline from "@/components/ui/text/underline-center";
 import Image from "astro/components/Image.astro";
+import { motion } from "motion/react";
 ---
 
 <div
@@ -13,12 +14,19 @@ import Image from "astro/components/Image.astro";
 
     <div class="flex gap-2 items-center">
       <p>Created by:</p>
-      <a href="https://www.linkedin.com/in/jchu634/">
-        <Image src={LinkedInWhite} class="w-6" alt="Linkedin Logo" /></a
+      <motion.a 
+      client:load
+      whileTap={{ scale: 1.05 }}
+      whileHover={{ scale: 1.05 }}
+      href="https://www.linkedin.com/in/jchu634/">
+        <Image src={LinkedInWhite} class="w-6" alt="Linkedin Logo" /></motion.a
       >
-      <a href="https://github.com/jchu634" aria-label="Link to Author's Github">
+      <motion.a client:load
+      whileTap={{ scale: 1.05 }}
+      whileHover={{ scale: 1.05 }}
+      href="https://github.com/jchu634" aria-label="Link to Author's Github">
         <GithubWhite size="20" aria-label="Github Logo" />
-      </a>
+      </motion.a>
       <a href="https://www.keshuac.com">
         <CenterUnderline client:load label="JCHU634" />
       </a>
