@@ -23,6 +23,13 @@ jobs:
         with: 
             submodules: true
 
+      - name: Debug - List directories
+        run: |
+          echo "Current directory contents:"
+          ls -la
+          echo "\nRoot directory structure:"
+          tree -L 2
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
