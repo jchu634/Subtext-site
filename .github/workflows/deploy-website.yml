@@ -23,24 +23,13 @@ jobs:
         with: 
           submodules: 'true'
 
+      - name: Manually add submodule
+        run: git submodule add -b website-mockup https://github.com/jchu634/Subtext-app.git
+
       - name: check file structure
         run: |
           echo "\nRoot directory structure:"
           tree -L 2
-
-
-      - name: Debug - Submodule and Git Status
-        run: |
-          echo "Git Status:"
-          git status
-          echo "\nSubmodule Status:"
-          git submodule status
-          echo "\nSubmodule Summary:"
-          git submodule summary
-          echo "\nCurrent directory contents:"
-          ls -la
-          echo "\nSubmodule directory contents (if exists):"
-          ls -la Subtext-app || echo "Subtext-app directory not found"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
