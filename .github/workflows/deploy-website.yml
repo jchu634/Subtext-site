@@ -21,7 +21,10 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
         with: 
-            submodules: true
+          submodules: 'true'
+
+      - name: Manually add submodule
+        run: git submodule add -b website-mockup https://github.com/jchu634/Subtext-app.git
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,7 +42,7 @@ jobs:
 
       - name: Move Next.js files to Astro
         run: |
-          cp ./Subtext-app/frontend/out/index.html ./Subtext-site/src/pages/subtext/index.astro
+          cp ./Subtext-app/frontend/out/index.html ./Subtext-site/src/pages/subtext/index.html
           cp -r ./Subtext-app/frontend/out/_next/static/* ./Subtext-site/public/_next/static/
 
       - name: Install, build, and upload your site
