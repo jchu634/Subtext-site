@@ -88,8 +88,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-lexend: 'Lexend Deca', sans-serif;
-  --font-funnel: 'Funnel Display', sans-serif;
+  --font-lexend: 'Lexend Deca Variable', sans-serif;
+  --font-funnel: 'Funnel Display Variable', sans-serif;
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
