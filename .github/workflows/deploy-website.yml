@@ -21,8 +21,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
         with: 
-          submodules: recursive
-          fetch-depth: 0
+          submodules: 'true'
 
       - name: check file structure
         run: |
