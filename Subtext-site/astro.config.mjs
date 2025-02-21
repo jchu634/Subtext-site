@@ -22,5 +22,5 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  site: "https://subtext.cc",
+  site: "https://subtextapp.cc",
 });
