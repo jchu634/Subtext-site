@@ -24,6 +24,12 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: check file structure
+        run: |
+          echo "\nRoot directory structure:"
+          tree -L 2
+
+
       - name: Debug - Submodule and Git Status
         run: |
           echo "Git Status:"
