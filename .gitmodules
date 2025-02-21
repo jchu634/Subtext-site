@@ -1,0 +1,4 @@
+[submodule "Subtext-app"]
+	path = Subtext-app
+	url = https://github.com/jchu634/Subtext-app.git
+	branch = website-mockup
