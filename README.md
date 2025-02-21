@@ -2,7 +2,7 @@
 This repo is the source code for the subtext website.\
 If you are here for the app instead, it is located at [github.com/jchu634/subtextapp](https://github.com/jchu634/subtextapp).
 
-![Homepage](image.png)
+![Homepage](https://github.com/user-attachments/assets/1bc23ec8-ecb9-4a05-accb-405d6ff48aad)
 
 ### Built Using
 <a href="https://astro.build/">
