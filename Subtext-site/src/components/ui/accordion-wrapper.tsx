@@ -9,7 +9,7 @@ interface Props {
   data: {
     title: string;
     description: string;
-    bullets?: string[]
+    bullets?: string[];
   }[];
 }
 
@@ -42,15 +42,16 @@ export function BulletAccordion({ data }: Props) {
             </AccordionTrigger>
             <AccordionContent className="text-lg whitespace-pre-wrap">
               {item.description}
-            </AccordionContent>
-            {item.bullets &&
-              (
+              {item.bullets && (
                 <ul className="list-disc pl-5">
                   {item.bullets.map((bullet: String) => {
-                    return <li className={`bullet-${i.toFixed()}`}>{bullet}</li>;
+                    return (
+                      <li className={`bullet-${i.toFixed()}`}>{bullet}</li>
+                    );
                   })}
                 </ul>
               )}
+            </AccordionContent>
           </AccordionItem>
         );
       })}
