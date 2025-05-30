@@ -10,6 +10,7 @@ interface Props {
     title: string;
     description: string;
     bullets?: string[];
+    notes?: string;
   }[];
 }
 
@@ -51,6 +52,7 @@ export function BulletAccordion({ data }: Props) {
                   })}
                 </ul>
               )}
+              {item.notes}
             </AccordionContent>
           </AccordionItem>
         );
