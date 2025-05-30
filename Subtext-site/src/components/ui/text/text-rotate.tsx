@@ -193,7 +193,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 
     return (
       <motion.span
-        className={cn("flex flex-wrap ", mainClassName)}
+        className={cn("flex flex-wrap", mainClassName)}
         {...props}
         layout
         transition={transition}
@@ -208,7 +208,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
             key={currentTextIndex}
             className={cn(
               "flex flex-wrap",
-              splitBy === "lines" && "flex-col w-full",
+              splitBy === "lines" && "w-full flex-col",
             )}
             layout
             aria-hidden="true"

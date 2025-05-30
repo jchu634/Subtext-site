@@ -3,8 +3,8 @@ import { LayoutGroup, motion } from "motion/react";
 
 export function RotaryText() {
   return (
-    <div className="flex whitespace-pre flex-col font-funnel text-2xl">
-      <div className="flex items-center h-10">
+    <div className="font-funnel flex flex-col text-2xl whitespace-pre">
+      <div className="flex h-10 items-center">
         <LayoutGroup>
           <motion.div className="flex whitespace-pre" layout>
             <motion.span
@@ -28,7 +28,7 @@ export function RotaryText() {
               rotationInterval={2500}
             />
             <motion.span
-              className="pt-0.5 sm:pt-1 md:pt-2 md:text-wrap hidden sm:block lg:hidden xl:block"
+              className="hidden pt-0.5 sm:block sm:pt-1 md:pt-2 md:text-wrap lg:hidden xl:block"
               layout
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
             >
@@ -38,7 +38,7 @@ export function RotaryText() {
           </motion.div>
         </LayoutGroup>
       </div>
-      <span className="pt-0.5 sm:pt-1 md:pt-2 block sm:hidden lg:block xl:hidden">
+      <span className="block pt-0.5 sm:hidden sm:pt-1 md:pt-2 lg:block xl:hidden">
         {" "}
         AI subtitle generating app
       </span>
