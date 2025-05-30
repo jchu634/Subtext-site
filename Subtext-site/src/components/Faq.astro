@@ -63,17 +63,17 @@ const troubleshootingFAQs = [
 ];
 ---
 
-<div class="font-funnel flex min-h-screen px-8 pt-20 pb-28 md:px-13 2xl:px-20">
+<div class="flex min-h-screen pt-20 px-8 md:px-13 2xl:px-20 font-funnel pb-28">
   <Image
     src={background}
-    class="fixed inset-0 -z-10 h-full w-full blur-[100px]"
+    class="fixed inset-0 w-full h-full -z-10 blur-[100px]"
     alt="background"
     fetchpriority="high"
   />
-  <main class="font-funnel w-full gap-8 pt-10">
+  <main class="w-full pt-10 gap-8 font-funnel">
     <h1 class="text-3xl font-medium">Frequently Asked Questions (FAQs)</h1>
 
-    <section class="space-y-4 pt-4">
+    <section class="pt-4 space-y-4">
       <div class="font-medium">
         <h2 class="text-2xl">General Information</h2>
         <Accordion data={generalAboutFAQs} client:idle />
