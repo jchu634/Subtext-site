@@ -1,0 +1,60 @@
+---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+import background from "@/assets/background.svg";
+import { BulletAccordion } from "@/components/ui/accordion-wrapper";
+
+const releaseNotes = [
+  {
+    title: "1.2.0",
+    description:
+      "Jobs Feature Release.\n\nChangelog: See the progress of your jobs in the all new jobs menu",
+    bullets: [
+      "See the progress of your jobs",
+      "See if your jobs succeeded or failed",
+      "If multi-job is enabled, see if your jobs are still running",
+    ],
+    notes:
+      "\nNotes:\nDue to technical issues, progress bars cannot be shown while in multi-job mode.\nPlease use the status indications to see your job's status",
+  },
+  {
+    title: "1.1.0",
+    description: "Drag and Drop Feature Release.\n\nChangelog:",
+    bullets: [
+      "New feature: Add files via Drag and Drop!",
+      "Change: Whisper has been seperated into two models (CPU, GPU) so you can choose which one you want",
+    ],
+  },
+  {
+    title: "1.0.0",
+    description: "Initial Release!",
+  },
+];
+---
+
+<Layout>
+  <Header />
+  <div
+    class="font-funnel flex min-h-screen px-8 pt-20 pb-28 md:px-13 2xl:px-20"
+  >
+    <Image
+      src={background}
+      class="fixed inset-0 -z-10 h-full w-full blur-[100px]"
+      alt="background"
+      fetchpriority="high"
+    />
+    <main class="font-funnel w-full gap-8 pt-10">
+      <h1 class="text-3xl font-medium">Release Notes</h1>
+
+      <section class="space-y-4 pt-4">
+        <div class="font-medium">
+          <BulletAccordion data={releaseNotes} client:idle />
+        </div>
+      </section>
+    </main>
+  </div>
+  <Footer />
+</Layout>
