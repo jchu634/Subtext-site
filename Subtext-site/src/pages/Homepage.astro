@@ -6,7 +6,7 @@ import ScreenshotLightLarge from "@/assets/ScreenshotLightLarge.png";
 import ScreenshotDark from "@/assets/ScreenshotDark.png";
 import ScreenshotLight from "@/assets/ScreenshotLight.png";
 import Github from "@/assets/github.svg";
-import { RotaryText } from "@/components/HomepageRotaryText";
+import { RotaryText } from "./HomepageRotaryText";
 import { motion } from "motion/react";
 
 const previewURL = new URL("/subtext", Astro.url);
@@ -49,6 +49,17 @@ const previewURL = new URL("/subtext", Astro.url);
 
           <Github size="30" />
         </motion.a>
+      </section>
+      <section class="flex items-center space-x-2 pt-10">
+        <h3 class="font-lexend text-[20px]">v1.2.0 Released</h3>
+        <motion.a
+          client:load
+          whileTap={{ scale: 1.05 }}
+          whileHover={{ scale: 1.05 }}
+          className="rounded-md bg-yellow-400 bg-gradient-to-r px-4 py-2 text-left font-semibold text-zinc-700"
+          href="/release-notes"
+          >Release Notes</motion.a
+        >
       </section>
       <section class="block items-center pt-10 lg:hidden">
         <motion.div
